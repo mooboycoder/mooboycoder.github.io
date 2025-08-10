@@ -28,8 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Scroll to the target element smoothly.
             if (targetElement) {
+                // Adjust for fixed header height.
+                const headerHeight = document.querySelector('.header').offsetHeight;
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80, // Adjust for fixed header height.
+                    top: targetElement.offsetTop - headerHeight,
                     behavior: 'smooth'
                 });
             }
